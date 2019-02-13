@@ -1,0 +1,15 @@
+library(dplyr)
+library(xts)
+library(PerformanceAnalytics)
+library(quantmod)
+#Leitura de dados
+dados<-read.fwf(file="C:/Users/ufc/Documents/COTAHIST_A2019.txt",widths =c(2,8,2,7,89,13,49,18), skip = 4)
+#Variáveis importantes
+dados<-dados[,c(2,3,4,6,8)]
+#Nomes das variáveis
+names(dados)<-c("data","bdi","cod","preco","volume")
+#Filtrando ações do mercado fracionário
+dados<-filter(dados,bdi==96)
+#Corrigindo variáveis
+dados<-mutate(dados,preco=preco/100,volume=volume/100)
+dados$data<-as.Date(dados$data,format = "%Y%m%d")
