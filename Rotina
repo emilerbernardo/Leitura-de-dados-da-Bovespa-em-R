@@ -3,7 +3,7 @@ library(xts)
 library(PerformanceAnalytics)
 library(quantmod)
 #Leitura de dados
-dados<-read.fwf(file="~COTAHIST_A2019.txt",widths =c(2,8,2,7,89,13,49,18), skip = 4)
+dados<-read.fwf(file="~COTAHIST.txt",widths =c(2,8,2,7,89,13,49,18), skip = 4)
 #Variáveis importantes
 dados<-dados[,c(2,3,4,6,8)]
 #Nomes das variáveis
