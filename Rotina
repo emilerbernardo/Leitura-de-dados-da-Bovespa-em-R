@@ -1,7 +1,4 @@
 library(dplyr)
-library(xts)
-library(PerformanceAnalytics)
-library(quantmod)
 #Leitura de dados
 dados<-read.fwf(file="~COTAHIST.txt",widths =c(2,8,2,7,89,13,49,18), skip = 4)
 #Variáveis importantes
